@@ -19,14 +19,7 @@ import {
   PaginationLink,
 } from "@/components/ui/pagination";
 import { SearchFilterSelect } from "@/components/search-filter-select";
-import {
-  DropdownMenu,
-  DropdownMenuTrigger,
-  DropdownMenuContent,
-  DropdownMenuSectionTitle,
-  DropdownMenuDivider,
-  DropdownMenuItem,
-} from "@/components/ui/dropdown-menu";
+import { ActionDropdownMenu } from "@/components/action-dropdown-menu";
 
 type AnalysisStatus = "분석중" | "분석완료";
 
@@ -147,7 +140,7 @@ const UserPage = () => {
           </h2>
 
           <div className="flex items-start gap-2.5">
-            <SearchFilterSelect />
+            <SearchFilterSelect variant="user" />
 
             <div className="flex items-center rounded-md border border-[#D4D4D4] bg-white">
               <div className="flex h-9 items-center border-r border-[#D4D4D4] px-3 py-1">
@@ -221,31 +214,21 @@ const UserPage = () => {
                     </div>
                   </div>
                   <div className="flex w-[49.51px] items-center justify-between px-2 py-2 min-h-[53px]">
-                    <DropdownMenu
+                    <ActionDropdownMenu
+                      variant="user"
                       open={openDropdownId === record.id}
                       onOpenChange={(open) =>
                         setOpenDropdownId(open ? record.id : null)
                       }
-                    >
-                      <DropdownMenuTrigger asChild>
+                      onAction={(action) => {
+                        console.log(`Action: ${action} for record ${record.id}`);
+                      }}
+                      trigger={
                         <button className="flex h-8 w-8 items-center justify-center">
                           <MoreVertical className="h-4 w-4 text-[#0A0A0A]" />
                         </button>
-                      </DropdownMenuTrigger>
-                      <DropdownMenuContent>
-                        <DropdownMenuSectionTitle>
-                          관리
-                        </DropdownMenuSectionTitle>
-                        <DropdownMenuDivider />
-                        <DropdownMenuItem
-                          icon={
-                            <Download className="h-4 w-4 stroke-slate-700 stroke-2" />
-                          }
-                        >
-                          다운로드
-                        </DropdownMenuItem>
-                      </DropdownMenuContent>
-                    </DropdownMenu>
+                      }
+                    />
                   </div>
                 </div>
               ))}
