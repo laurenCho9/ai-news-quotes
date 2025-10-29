@@ -10,7 +10,15 @@ export default function LoginPage() {
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    router.push("/admin");
+    // Example: if user role is "사용자", navigate to /user, otherwise /admin
+    // For now, defaulting to user page - you can add role logic here
+    const userRole = "사용자"; // This should come from authentication
+
+    if (userRole === "사용자") {
+      router.push("/user");
+    } else {
+      router.push("/admin");
+    }
   };
 
   const handleRegister = () => {
@@ -44,7 +52,7 @@ export default function LoginPage() {
 
             <div className="flex flex-col gap-1.5">
               <label htmlFor="password" className="text-sm font-normal leading-5 text-black">
-                비밀번호
+                비밀번��
               </label>
               <input
                 id="password"
