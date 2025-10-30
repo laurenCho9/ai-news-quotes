@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { UsersRound, Settings, FileText } from "lucide-react";
-import { LogoutButton } from "@/components/LogoutButton";
+import { LogoutButton } from "@/components/common/LogoutButton";
 import { cn } from "@/lib/utils";
 
 const menuItems = [

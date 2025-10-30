@@ -8,10 +8,10 @@ import {
   ChevronRight,
   Ellipsis,
 } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { SearchFilterSelect } from "@/components/search-filter-select";
-import { ActionDropdownMenu } from "@/components/action-dropdown-menu";
+import { Badge } from "@/components/ui/Badge";
+import { Button } from "@/components/ui/Button";
+import { SearchFilterSelect } from "@/components/common/SearchFilterSelect";
+import { ActionDropdownMenu } from "@/components/common/ActionDropdownMenu";
 import { cn } from "@/lib/utils";
 
 const members = [

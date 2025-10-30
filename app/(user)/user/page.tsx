@@ -16,11 +16,11 @@ import {
   PaginationEllipsis,
   PaginationItem,
   PaginationLink,
-} from "@/components/ui/pagination";
-import { Button } from "@/components/ui/button";
-import { LogoutButton } from "@/components/LogoutButton";
-import { SearchFilterSelect } from "@/components/search-filter-select";
-import { ActionDropdownMenu } from "@/components/action-dropdown-menu";
+} from "@/components/ui/Pagination";
+import { Button } from "@/components/ui/Button";
+import { LogoutButton } from "@/components/common/LogoutButton";
+import { SearchFilterSelect } from "@/components/common/SearchFilterSelect";
+import { ActionDropdownMenu } from "@/components/common/ActionDropdownMenu";
 
 type AnalysisStatus = "분석중" | "분석완료";
 

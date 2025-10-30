@@ -1,9 +1,9 @@
-import { AdminSidebar } from "@/components/admin-sidebar"
+import { AdminSidebar } from "@/components/common/AdminSidebar";
 
 export default function AdminLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <div className="flex min-h-screen items-center justify-center bg-[#F1F5F9] p-5">
@@ -12,5 +12,5 @@ export default function AdminLayout({
         {children}
       </div>
     </div>
-  )
+  );
 }

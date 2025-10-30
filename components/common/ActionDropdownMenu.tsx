@@ -8,7 +8,7 @@ import {
   DropdownMenuSectionTitle,
   DropdownMenuDivider,
   DropdownMenuItem,
-} from "@/components/ui/dropdown-menu";
+} from "@/components/common/DropdownMenu";
 
 interface ActionDropdownMenuProps {
   variant: "user" | "admin";
@@ -45,7 +45,9 @@ export function ActionDropdownMenu({
         return (
           <>
             <DropdownMenuItem
-              icon={<CheckCircle className="h-4 w-4 stroke-slate-700 stroke-2" />}
+              icon={
+                <CheckCircle className="h-4 w-4 stroke-slate-700 stroke-2" />
+              }
               onClick={() => handleAction("approve")}
             >
               승인
@@ -57,7 +59,9 @@ export function ActionDropdownMenu({
               거부
             </DropdownMenuItem>
             <DropdownMenuItem
-              icon={<AlertTriangle className="h-4 w-4 stroke-slate-700 stroke-2" />}
+              icon={
+                <AlertTriangle className="h-4 w-4 stroke-slate-700 stroke-2" />
+              }
               onClick={() => handleAction("block")}
             >
               차단

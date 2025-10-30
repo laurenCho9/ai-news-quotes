@@ -9,8 +9,8 @@ import {
   Loader,
   CircleCheck,
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { ActionDropdownMenu } from "@/components/action-dropdown-menu";
+import { Button } from "@/components/ui/Button";
+import { ActionDropdownMenu } from "@/components/common/ActionDropdownMenu";
 import { cn } from "@/lib/utils";
 
 const historyData = [

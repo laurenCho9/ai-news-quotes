@@ -34,14 +34,15 @@ function DropdownMenuTrigger({
   const { open, onOpenChange } = React.useContext(DropdownMenuContext);
 
   if (asChild && React.isValidElement(children)) {
+    const childProps = children.props as { onClick?: (e: React.MouseEvent) => void };
     return React.cloneElement(children, {
       ...props,
       onClick: (e: React.MouseEvent) => {
         e.stopPropagation();
         onOpenChange(!open);
-        children.props.onClick?.(e);
+        childProps.onClick?.(e);
       },
-    } as any);
+    } as React.HTMLAttributes<HTMLElement>);
   }
 
   return (
