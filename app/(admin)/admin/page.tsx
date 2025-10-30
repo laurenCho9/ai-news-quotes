@@ -107,8 +107,8 @@ export default function AdminPage() {
       </div>
 
       <div className="flex h-[622px] flex-col items-start gap-4 self-stretch">
-        <div className="flex h-[570px] shrink-0 flex-col items-start self-stretch rounded-md border border-[#E5E5E5] bg-white">
-          <div className="flex items-start self-stretch border-b border-[#E5E5E5] bg-[#F5F5F5]">
+        <div className="flex h-[570px] shrink-0 flex-col items-start self-stretch rounded-md border border-[#E5E5E5] bg-white overflow-hidden">
+          <div className="flex items-start self-stretch border-b border-[#E5E5E5] bg-[#F5F5F5] rounded-t-md">
             <div className="flex h-10 flex-1 flex-col items-start justify-center px-8">
               <div className="flex items-center justify-center">
                 <span className="text-sm font-medium leading-5 text-[#0A0A0A]">

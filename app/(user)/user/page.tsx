@@ -115,10 +115,10 @@ const UserPage = () => {
           </div>
 
           <div className="flex flex-col gap-4">
-            <div className="flex h-[570px] flex-col rounded-md border border-[#D4D4D4] bg-white">
-              <div className="flex items-start border-b border-[#D4D4D4] bg-[#F5F5F5]">
+            <div className="flex h-[570px] flex-col rounded-md border border-[#E5E5E5] bg-white overflow-hidden">
+              <div className="flex items-start border-b border-[#E5E5E5] bg-[#F5F5F5] rounded-t-md">
                 <div className="flex flex-1 flex-col justify-center gap-2.5 px-8 py-0 h-10">
-                  <span className="text-sm font-medium leading-5 text-[#0A0A0A] bg-white">
+                  <span className="text-sm font-medium leading-5 text-[#0A0A0A]">
                     파일명
                   </span>
                 </div>
@@ -138,7 +138,7 @@ const UserPage = () => {
               {mockData.map((record) => (
                 <div
                   key={record.id}
-                  className="flex items-start border-b border-[#D4D4D4]"
+                  className="flex items-start border-b border-[#E5E5E5]"
                 >
                   <div className="flex flex-1 flex-col justify-center gap-2.5 px-8 py-2 min-h-[53px]">
                     <span className="text-sm font-medium leading-5 text-[#0A0A0A]">
@@ -151,7 +151,7 @@ const UserPage = () => {
                     </span>
                   </div>
                   <div className="flex w-[108.18px] flex-col justify-center gap-2.5 px-2 py-2 min-h-[53px]">
-                    <div className="flex h-[22px] items-center justify-center gap-1 rounded-md border border-[#D4D4D4] bg-white px-1.5 py-0.5">
+                    <div className="flex h-[22px] items-center justify-center gap-1 rounded-md border border-[#E5E5E5] bg-white px-1.5 py-0.5">
                       {record.status === "분석중" ? (
                         <>
                           <Loader2 className="h-3 w-3 text-[#737373]" />
