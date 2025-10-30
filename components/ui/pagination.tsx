@@ -59,9 +59,10 @@ function PaginationLink({
           variant: isActive ? "outline" : "ghost",
           size,
         }),
-        isActive && "bg-white shadow-sm",
+        isActive && "bg-white border-[#E5E5E5]",
         className
       )}
+      style={isActive ? { boxShadow: "0px 1px 2px 0px #0000001A" } : undefined}
       {...props}
     />
   );

@@ -81,7 +81,7 @@ export function DataTablePagination({
               <PaginationLink
                 isActive={currentPage === page}
                 onClick={() => onPageChange(page)}
-                className="h-9 w-9"
+                className="h-9 w-9 border-[#E5E5E5]"
               >
                 <span className="text-sm font-medium leading-5 text-[#0A0A0A]">
                   {page}
