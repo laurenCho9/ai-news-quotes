@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Loader2, CircleCheck, MoreVertical, Search } from "lucide-react";
+import { Loader, Check, MoreVertical, Search } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { UserSidebar } from "@/app/(user)/components/UserSidebar";
 import { SearchFilterSelect } from "@/components/common/SearchFilterSelect";
@@ -145,17 +145,22 @@ const UserPage = () => {
                     </span>
                   </div>
                   <div className="flex w-[108.18px] flex-col justify-center gap-2.5 px-2 py-2 min-h-[53px]">
-                    <div className="flex h-[22px] items-center justify-center gap-1 rounded-md border border-[#E5E5E5] bg-white px-1.5 py-0.5">
+                    <div className="inline-flex items-center gap-1 rounded-md border border-[#E5E5E5] bg-white py-[3px] px-[6px] w-fit">
                       {record.status === "분석중" ? (
                         <>
-                          <Loader2 className="h-3 w-3 text-[#737373]" />
+                          <Loader className="h-3 w-3 text-[#737373]" />
                           <span className="text-xs font-medium leading-4 text-[#737373]">
                             분석중
                           </span>
                         </>
                       ) : (
                         <>
-                          <CircleCheck className="h-3 w-3 fill-[#22C55E] stroke-none" />
+                          <div className="flex h-3 w-3 items-center justify-center rounded-full bg-[#22C55E]">
+                            <Check
+                              className="h-2 w-2 text-white"
+                              strokeWidth={3}
+                            />
+                          </div>
                           <span className="text-xs font-medium leading-4 text-[#737373]">
                             분석완료
                           </span>
