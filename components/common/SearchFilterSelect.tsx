@@ -75,10 +75,10 @@ export function SearchFilterSelect({
       value={value}
       onValueChange={onValueChange}
     >
-      <SelectTrigger className="w-[180px] bg-white">
+      <SelectTrigger className="w-[180px] bg-white border-[#E5E5E5]">
         <SelectValue placeholder={getPlaceholder()} />
       </SelectTrigger>
-      <SelectContent className="bg-white">
+      <SelectContent className="bg-white border-[#E5E5E5]">
         <SelectGroup>
           <div className="px-2 py-1.5 text-xs text-muted-foreground">
             검색항목

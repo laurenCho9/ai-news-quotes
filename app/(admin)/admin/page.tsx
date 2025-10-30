@@ -92,12 +92,12 @@ export default function AdminPage() {
       <div className="flex items-start gap-2.5 self-stretch">
         <SearchFilterSelect variant="admin" />
 
-        <div className="flex items-center rounded-md border border-border bg-white">
-          <div className="flex h-9 w-[195.33px] items-center justify-between border-r border-border px-3 py-1">
+        <div className="flex items-center rounded-md border border-[#E5E5E5] bg-white">
+          <div className="flex h-9 w-[195.33px] items-center justify-between border-r border-[#E5E5E5] px-3 py-1">
             <input
               type="text"
               placeholder="검색할 내용을 입력하세요..."
-              className="flex-1 text-sm leading-5 text-[#737373] placeholder:text-[#737373] outline-none bg-transparent"
+              className="flex-1 text-sm leading-5 text-[#171717] placeholder:text-[#737373] outline-none bg-transparent"
             />
           </div>
           <div className="flex h-9 w-9 shrink-0 flex-col items-center justify-center">
@@ -107,8 +107,8 @@ export default function AdminPage() {
       </div>
 
       <div className="flex h-[622px] flex-col items-start gap-4 self-stretch">
-        <div className="flex h-[570px] shrink-0 flex-col items-start self-stretch rounded-md border border-border bg-white">
-          <div className="flex items-start self-stretch border-b border-border bg-[#F5F5F5]">
+        <div className="flex h-[570px] shrink-0 flex-col items-start self-stretch rounded-md border border-[#E5E5E5] bg-white">
+          <div className="flex items-start self-stretch border-b border-[#E5E5E5] bg-[#F5F5F5]">
             <div className="flex h-10 flex-1 flex-col items-start justify-center px-8">
               <div className="flex items-center justify-center">
                 <span className="text-sm font-medium leading-5 text-[#0A0A0A]">
@@ -152,7 +152,7 @@ export default function AdminPage() {
               key={index}
               className={cn(
                 "flex items-start self-stretch",
-                index !== members.length - 1 && "border-b border-border"
+                index !== members.length - 1 && "border-b border-[#E5E5E5]"
               )}
             >
               <div className="flex h-[53px] flex-1 flex-col items-start justify-center px-8 py-2">

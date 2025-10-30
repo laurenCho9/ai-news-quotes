@@ -83,7 +83,6 @@ const mockData: AnalysisRecord[] = [
 const UserPage = () => {
   const [currentPage, setCurrentPage] = useState(2);
   const [searchQuery, setSearchQuery] = useState("");
-  const [searchField, setSearchField] = useState("");
   const [openDropdownId, setOpenDropdownId] = useState<number | null>(null);
 
   return (
@@ -99,14 +98,14 @@ const UserPage = () => {
           <div className="flex items-start gap-2.5">
             <SearchFilterSelect variant="user" />
 
-            <div className="flex items-center rounded-md border border-[#D4D4D4] bg-white">
-              <div className="flex h-9 items-center border-r border-[#D4D4D4] px-3 py-1">
+            <div className="flex items-center rounded-md border border-[#E5E5E5] bg-white">
+              <div className="flex h-9 items-center border-r border-[#E5E5E5] px-3 py-1">
                 <input
                   type="text"
                   placeholder="검색할 내용을 입력하세요..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-[195px] text-sm leading-5 text-[#737373] placeholder:text-[#737373] outline-none"
+                  className="w-[195px] text-sm leading-5 text-[#171717] placeholder:text-[#737373] outline-none"
                 />
               </div>
               <div className="flex h-9 w-9 items-center justify-center">
