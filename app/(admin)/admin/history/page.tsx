@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { MoreVertical, Loader, CircleCheck } from "lucide-react";
-import { Button } from "@/components/ui/Button";
+import { Button } from "@/components/ui/button";
 import { ActionDropdownMenu } from "@/components/common/ActionDropdownMenu";
 import { DataTablePagination } from "@/components/common/DataTablePagination";
 import { cn } from "@/lib/utils";

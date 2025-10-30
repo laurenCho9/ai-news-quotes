@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Loader, Check, MoreVertical, Search } from "lucide-react";
-import { Button } from "@/components/ui/Button";
+import { Button } from "@/components/ui/button";
 import { UserSidebar } from "@/app/(user)/components/UserSidebar";
 import { SearchFilterSelect } from "@/components/common/SearchFilterSelect";
 import { ActionDropdownMenu } from "@/components/common/ActionDropdownMenu";

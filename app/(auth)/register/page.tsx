@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { Button } from "@/components/ui/Button";
-import { Dialog, DialogContent } from "@/components/ui/Dialog";
+import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
 
 export default function RegisterPage() {
   const [isApprovalModalOpen, setIsApprovalModalOpen] = useState(false);

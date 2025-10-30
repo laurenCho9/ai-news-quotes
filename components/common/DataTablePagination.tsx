@@ -1,13 +1,13 @@
 "use client";
 
 import { ChevronLeft, ChevronRight, Ellipsis } from "lucide-react";
-import { Button } from "@/components/ui/Button";
+import { Button } from "@/components/ui/button";
 import {
   Pagination,
   PaginationContent,
   PaginationItem,
   PaginationLink,
-} from "@/components/ui/Pagination";
+} from "@/components/ui/pagination";
 
 interface DataTablePaginationProps {
   currentPage: number;

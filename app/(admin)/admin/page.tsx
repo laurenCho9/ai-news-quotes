@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 import { Search, MoreVertical } from "lucide-react";
-import { Badge } from "@/components/ui/Badge";
-import { Button } from "@/components/ui/Button";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { SearchFilterSelect } from "@/components/common/SearchFilterSelect";
 import { ActionDropdownMenu } from "@/components/common/ActionDropdownMenu";
 import { DataTablePagination } from "@/components/common/DataTablePagination";

@@ -1,7 +1,7 @@
 "use client";
 
 import { Upload, Plus } from "lucide-react";
-import { Button } from "@/components/ui/Button";
+import { Button } from "@/components/ui/button";
 import { LogoutButton } from "@/components/common/LogoutButton";
 
 export function UserSidebar() {

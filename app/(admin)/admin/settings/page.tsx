@@ -2,14 +2,14 @@
 
 import { useState } from "react";
 import { Plus, Minus } from "lucide-react";
-import { Button } from "@/components/ui/Button";
+import { Button } from "@/components/ui/button";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/Select";
+} from "@/components/ui/select";
 
 export default function SettingsPage() {
   const [model, setModel] = useState("gpt-4");
