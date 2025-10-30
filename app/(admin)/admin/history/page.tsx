@@ -1,16 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import {
-  MoreVertical,
-  ChevronLeft,
-  ChevronRight,
-  Ellipsis,
-  Loader,
-  CircleCheck,
-} from "lucide-react";
+import { MoreVertical, Loader, CircleCheck } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { ActionDropdownMenu } from "@/components/common/ActionDropdownMenu";
+import { DataTablePagination } from "@/components/common/DataTablePagination";
 import { cn } from "@/lib/utils";
 
 const historyData = [
@@ -73,6 +67,7 @@ const historyData = [
 ];
 
 export default function AnalysisHistoryPage() {
+  const [currentPage, setCurrentPage] = useState(1);
   const [openDropdownId, setOpenDropdownId] = useState<number | null>(null);
 
   return (
@@ -198,45 +193,11 @@ export default function AnalysisHistoryPage() {
           ))}
         </div>
 
-        <div className="flex h-9 shrink-0 items-center justify-center gap-2 self-stretch">
-          <div className="flex items-center gap-1">
-            <Button variant="ghost" className="h-9 gap-1 px-3">
-              <ChevronLeft className="h-4 w-4" stroke="#0A0A0A" />
-              <span className="text-sm font-medium leading-5 text-[#0A0A0A]">
-                이전
-              </span>
-            </Button>
-
-            <Button variant="ghost" size="icon" className="h-9 w-9">
-              <span className="text-sm font-medium leading-5 text-[#0A0A0A]">
-                1
-              </span>
-            </Button>
-
-            <Button variant="outline" size="icon" className="h-9 w-9 shadow-sm">
-              <span className="text-sm font-medium leading-5 text-[#0A0A0A]">
-                2
-              </span>
-            </Button>
-
-            <Button variant="ghost" size="icon" className="h-9 w-9">
-              <span className="text-sm font-medium leading-5 text-[#0A0A0A]">
-                3
-              </span>
-            </Button>
-
-            <div className="flex h-9 w-9 items-center justify-center rounded-md p-2.5">
-              <Ellipsis className="h-4 w-4 shrink-0" stroke="#0A0A0A" />
-            </div>
-
-            <Button variant="ghost" className="h-9 gap-1 px-3">
-              <span className="text-sm font-medium leading-5 text-[#0A0A0A]">
-                다음
-              </span>
-              <ChevronRight className="h-4 w-4" stroke="#0A0A0A" />
-            </Button>
-          </div>
-        </div>
+        <DataTablePagination
+          currentPage={currentPage}
+          totalPages={9}
+          onPageChange={setCurrentPage}
+        />
       </div>
     </div>
   );

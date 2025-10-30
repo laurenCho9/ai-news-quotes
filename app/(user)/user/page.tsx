@@ -2,17 +2,11 @@
 
 import { useState } from "react";
 import { Loader2, CircleCheck, MoreVertical, Search } from "lucide-react";
-import {
-  Pagination,
-  PaginationContent,
-  PaginationEllipsis,
-  PaginationItem,
-  PaginationLink,
-} from "@/components/ui/Pagination";
 import { Button } from "@/components/ui/Button";
 import { UserSidebar } from "@/app/(user)/components/UserSidebar";
 import { SearchFilterSelect } from "@/components/common/SearchFilterSelect";
 import { ActionDropdownMenu } from "@/components/common/ActionDropdownMenu";
+import { DataTablePagination } from "@/components/common/DataTablePagination";
 
 type AnalysisStatus = "분석중" | "분석완료";
 
@@ -81,7 +75,7 @@ const mockData: AnalysisRecord[] = [
 ];
 
 const UserPage = () => {
-  const [currentPage, setCurrentPage] = useState(2);
+  const [currentPage, setCurrentPage] = useState(1);
   const [searchQuery, setSearchQuery] = useState("");
   const [openDropdownId, setOpenDropdownId] = useState<number | null>(null);
 
@@ -196,95 +190,11 @@ const UserPage = () => {
               ))}
             </div>
 
-            <div className="flex h-9 items-center justify-center gap-2">
-              <Pagination>
-                <PaginationContent>
-                  <PaginationItem>
-                    <Button
-                      variant="ghost"
-                      onClick={() =>
-                        setCurrentPage(Math.max(1, currentPage - 1))
-                      }
-                      className="h-9 gap-1 px-3"
-                    >
-                      <svg
-                        className="h-4 w-4"
-                        fill="none"
-                        viewBox="0 0 16 16"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M10 12L6 8L10 4"
-                          stroke="currentColor"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
-                      <span className="text-sm font-medium leading-5 text-[#0A0A0A]">
-                        이전
-                      </span>
-                    </Button>
-                  </PaginationItem>
-                  <PaginationItem>
-                    <PaginationLink
-                      href="#"
-                      isActive={currentPage === 1}
-                      onClick={() => setCurrentPage(1)}
-                      className="h-9 w-9 p-2.5 rounded-md"
-                    >
-                      1
-                    </PaginationLink>
-                  </PaginationItem>
-                  <PaginationItem>
-                    <PaginationLink
-                      href="#"
-                      isActive={currentPage === 2}
-                      onClick={() => setCurrentPage(2)}
-                      className="h-9 w-9 p-2.5 rounded-md"
-                    >
-                      2
-                    </PaginationLink>
-                  </PaginationItem>
-                  <PaginationItem>
-                    <PaginationLink
-                      href="#"
-                      isActive={currentPage === 3}
-                      onClick={() => setCurrentPage(3)}
-                      className="h-9 w-9 p-2.5 rounded-md"
-                    >
-                      3
-                    </PaginationLink>
-                  </PaginationItem>
-                  <PaginationItem>
-                    <PaginationEllipsis />
-                  </PaginationItem>
-                  <PaginationItem>
-                    <Button
-                      variant="ghost"
-                      onClick={() => setCurrentPage(currentPage + 1)}
-                      className="h-9 gap-1 px-3"
-                    >
-                      <span className="text-sm font-medium leading-5 text-[#0A0A0A]">
-                        다음
-                      </span>
-                      <svg
-                        className="h-4 w-4"
-                        fill="none"
-                        viewBox="0 0 16 16"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M6 12L10 8L6 4"
-                          stroke="currentColor"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
-                    </Button>
-                  </PaginationItem>
-                </PaginationContent>
-              </Pagination>
-            </div>
+            <DataTablePagination
+              currentPage={currentPage}
+              totalPages={9}
+              onPageChange={setCurrentPage}
+            />
           </div>
         </main>
       </div>
