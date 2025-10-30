@@ -3,6 +3,7 @@
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { UsersRound, Settings, FileText, LogOut } from "lucide-react"
+import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 
 const menuItems = [
@@ -75,14 +76,14 @@ export function AdminSidebar() {
       </div>
 
       <div className="flex flex-col items-start gap-2.5 self-stretch p-2">
-        <button className="flex items-center gap-2 self-stretch p-2 transition-colors hover:bg-[#E5E7EB] rounded-md">
+        <Button variant="ghost" className="w-full justify-start gap-2 p-2 h-auto hover:bg-[#E5E7EB]">
           <LogOut className="h-4 w-4" stroke="#737373" strokeWidth={1.25} />
           <div className="flex flex-1 flex-col items-start">
             <span className="self-stretch text-xs font-normal leading-4 text-[#737373]">
               로그아웃
             </span>
           </div>
-        </button>
+        </Button>
       </div>
     </div>
   )

@@ -70,18 +70,22 @@ export default function SettingsPage() {
                 />
               </div>
               <div className="flex items-center rounded-md border border-border bg-white">
-                <button
+                <Button
                   onClick={incrementTokens}
-                  className="flex h-9 w-9 flex-col items-center justify-center gap-2.5 border-r border-b border-border transition-colors hover:bg-[#F5F5F5]"
+                  variant="ghost"
+                  size="icon"
+                  className="h-9 w-9 rounded-none border-r border-b border-border hover:bg-[#F5F5F5]"
                 >
                   <Plus className="h-4 w-4 shrink-0" stroke="#0A0A0A" />
-                </button>
-                <button
+                </Button>
+                <Button
                   onClick={decrementTokens}
-                  className="flex h-9 w-9 flex-col items-center justify-center gap-2.5 transition-colors hover:bg-[#F5F5F5]"
+                  variant="ghost"
+                  size="icon"
+                  className="h-9 w-9 rounded-none hover:bg-[#F5F5F5]"
                 >
                   <Minus className="h-4 w-4 shrink-0" stroke="#0A0A0A" />
-                </button>
+                </Button>
               </div>
             </div>
           </div>

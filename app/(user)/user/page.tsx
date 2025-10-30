@@ -18,6 +18,7 @@ import {
   PaginationItem,
   PaginationLink,
 } from "@/components/ui/pagination";
+import { Button } from "@/components/ui/button";
 import { SearchFilterSelect } from "@/components/search-filter-select";
 import { ActionDropdownMenu } from "@/components/action-dropdown-menu";
 
@@ -109,16 +110,16 @@ const UserPage = () => {
 
           <div className="flex flex-1 flex-col px-4 py-2">
             <div className="flex flex-col items-center gap-2">
-              <button className="flex w-full items-center gap-2 rounded-md bg-slate-900 px-4 py-2">
+              <Button className="w-full gap-2 bg-slate-900 hover:bg-slate-800">
                 <Upload className="h-4 w-4 text-white" />
                 <span className="text-sm leading-6 text-white">
                   파일 업로드
                 </span>
-              </button>
-              <button className="flex w-full items-center gap-2 rounded-md bg-[#64748B] px-4 py-2">
+              </Button>
+              <Button className="w-full gap-2 bg-[#64748B] hover:bg-[#64748B]/90">
                 <Plus className="h-4 w-4 text-white" />
                 <span className="text-sm leading-6 text-white">업로드하기</span>
-              </button>
+              </Button>
             </div>
           </div>
 
@@ -224,9 +225,9 @@ const UserPage = () => {
                         console.log(`Action: ${action} for record ${record.id}`);
                       }}
                       trigger={
-                        <button className="flex h-8 w-8 items-center justify-center">
+                        <Button variant="ghost" size="icon-sm" className="h-8 w-8">
                           <MoreVertical className="h-4 w-4 text-[#0A0A0A]" />
-                        </button>
+                        </Button>
                       }
                     />
                   </div>
@@ -238,11 +239,12 @@ const UserPage = () => {
               <Pagination>
                 <PaginationContent>
                   <PaginationItem>
-                    <button
+                    <Button
+                      variant="ghost"
                       onClick={() =>
                         setCurrentPage(Math.max(1, currentPage - 1))
                       }
-                      className="flex h-9 items-center gap-1 rounded-md px-3 py-2 hover:bg-accent hover:text-accent-foreground"
+                      className="h-9 gap-1 px-3"
                     >
                       <svg
                         className="h-4 w-4"
@@ -260,7 +262,7 @@ const UserPage = () => {
                       <span className="text-sm font-medium leading-5 text-[#0A0A0A]">
                         이전
                       </span>
-                    </button>
+                    </Button>
                   </PaginationItem>
                   <PaginationItem>
                     <PaginationLink
@@ -296,9 +298,10 @@ const UserPage = () => {
                     <PaginationEllipsis />
                   </PaginationItem>
                   <PaginationItem>
-                    <button
+                    <Button
+                      variant="ghost"
                       onClick={() => setCurrentPage(currentPage + 1)}
-                      className="flex h-9 items-center gap-1 rounded-md px-3 py-2 hover:bg-accent hover:text-accent-foreground"
+                      className="h-9 gap-1 px-3"
                     >
                       <span className="text-sm font-medium leading-5 text-[#0A0A0A]">
                         다음
@@ -316,7 +319,7 @@ const UserPage = () => {
                           strokeLinejoin="round"
                         />
                       </svg>
-                    </button>
+                    </Button>
                   </PaginationItem>
                 </PaginationContent>
               </Pagination>

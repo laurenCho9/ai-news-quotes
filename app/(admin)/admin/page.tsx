@@ -9,6 +9,7 @@ import {
   Ellipsis,
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { SearchFilterSelect } from "@/components/search-filter-select";
 import { ActionDropdownMenu } from "@/components/action-dropdown-menu";
 import { cn } from "@/lib/utils";
@@ -210,9 +211,9 @@ export default function AdminPage() {
                     console.log(`Action: ${action} for member ${member.id}`);
                   }}
                   trigger={
-                    <button className="flex h-8 w-8 items-center justify-center">
+                    <Button variant="ghost" size="icon-sm" className="h-8 w-8">
                       <MoreVertical className="h-4 w-4 text-[#0A0A0A]" />
-                    </button>
+                    </Button>
                   }
                 />
               </div>
@@ -222,41 +223,41 @@ export default function AdminPage() {
 
         <div className="flex h-9 shrink-0 items-center justify-center gap-2 self-stretch">
           <div className="flex items-center gap-1">
-            <button className="flex h-9 items-center justify-center gap-1 rounded-md px-3 py-2 hover:bg-accent transition-colors">
+            <Button variant="ghost" className="h-9 gap-1 px-3">
               <ChevronLeft className="h-4 w-4" stroke="#0A0A0A" />
               <span className="text-sm font-medium leading-5 text-[#0A0A0A]">
                 이전
               </span>
-            </button>
+            </Button>
 
-            <button className="flex h-9 w-9 items-center justify-center rounded-md p-2.5 hover:bg-accent transition-colors">
+            <Button variant="ghost" size="icon" className="h-9 w-9">
               <span className="text-sm font-medium leading-5 text-[#0A0A0A]">
                 1
               </span>
-            </button>
+            </Button>
 
-            <button className="flex h-9 w-9 items-center justify-center rounded-md border border-border bg-white p-2.5 shadow-sm hover:bg-accent transition-colors">
+            <Button variant="outline" size="icon" className="h-9 w-9 shadow-sm">
               <span className="text-sm font-medium leading-5 text-[#0A0A0A]">
                 2
               </span>
-            </button>
+            </Button>
 
-            <button className="flex h-9 w-9 items-center justify-center rounded-md p-2.5 hover:bg-accent transition-colors">
+            <Button variant="ghost" size="icon" className="h-9 w-9">
               <span className="text-sm font-medium leading-5 text-[#0A0A0A]">
                 3
               </span>
-            </button>
+            </Button>
 
             <div className="flex h-9 w-9 items-center justify-center rounded-md p-2.5">
               <Ellipsis className="h-4 w-4 shrink-0" stroke="#0A0A0A" />
             </div>
 
-            <button className="flex h-9 items-center justify-center gap-1 rounded-md px-3 py-2 hover:bg-accent transition-colors">
+            <Button variant="ghost" className="h-9 gap-1 px-3">
               <span className="text-sm font-medium leading-5 text-[#0A0A0A]">
                 다음
               </span>
               <ChevronRight className="h-4 w-4" stroke="#0A0A0A" />
-            </button>
+            </Button>
           </div>
         </div>
       </div>

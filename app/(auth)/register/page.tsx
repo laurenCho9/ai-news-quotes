@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { Button } from "@/components/ui/button";
 
 export default function RegisterPage() {
   const [isApprovalModalOpen, setIsApprovalModalOpen] = useState(false);
@@ -104,15 +105,18 @@ export default function RegisterPage() {
             </div>
 
             <div className="flex gap-2">
-              <button
+              <Button
                 onClick={handleRegister}
-                className="flex flex-1 items-center justify-center gap-2.5 rounded-md bg-[#0F172A] px-4 py-2 text-sm font-normal leading-6 text-white hover:bg-[#0F172A]/90 transition-colors"
+                className="flex-1 bg-[#0F172A] hover:bg-[#0F172A]/90"
               >
                 가입
-              </button>
-              <button className="flex flex-1 items-center justify-center gap-2.5 rounded-md border border-[#E2E8F0] bg-[#F1F5F9] px-4 py-2 text-sm font-normal leading-6 text-[#0F172A] hover:bg-[#E2E8F0] transition-colors">
+              </Button>
+              <Button
+                variant="outline"
+                className="flex-1 border-[#E2E8F0] bg-[#F1F5F9] text-[#0F172A] hover:bg-[#E2E8F0]"
+              >
                 취소
-              </button>
+              </Button>
             </div>
           </div>
         </div>
@@ -133,12 +137,12 @@ export default function RegisterPage() {
             </p>
           </div>
           <div className="flex justify-end">
-            <button
+            <Button
               onClick={handleConfirm}
-              className="flex items-center justify-center gap-2.5 rounded-[6px] bg-[#0F172A] px-4 py-2 text-sm font-medium leading-6 text-white hover:bg-[#0F172A]/90 transition-colors"
+              className="bg-[#0F172A] hover:bg-[#0F172A]/90"
             >
               확인
-            </button>
+            </Button>
           </div>
         </DialogContent>
       </Dialog>

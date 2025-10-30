@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { Button } from "@/components/ui/button";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
@@ -28,7 +29,10 @@ export default function LoginPage() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-[#F1F5F9] px-4">
       <div className="w-full max-w-[425px] rounded-lg border border-[#CBD5E1] bg-white p-6">
-        <form onSubmit={handleLogin} className="flex flex-col items-center gap-8">
+        <form
+          onSubmit={handleLogin}
+          className="flex flex-col items-center gap-8"
+        >
           <div className="flex flex-col items-center gap-2">
             <h1 className="text-lg font-bold leading-7 text-[#0F172A]">
               AI 뉴스 분석 시스템
@@ -37,7 +41,10 @@ export default function LoginPage() {
 
           <div className="flex w-full flex-col gap-4">
             <div className="flex flex-col gap-1.5">
-              <label htmlFor="email" className="text-sm font-normal leading-5 text-black">
+              <label
+                htmlFor="email"
+                className="text-sm font-normal leading-5 text-black"
+              >
                 아이디
               </label>
               <input
@@ -51,8 +58,11 @@ export default function LoginPage() {
             </div>
 
             <div className="flex flex-col gap-1.5">
-              <label htmlFor="password" className="text-sm font-normal leading-5 text-black">
-                비밀번��
+              <label
+                htmlFor="password"
+                className="text-sm font-normal leading-5 text-black"
+              >
+                비밀번호
               </label>
               <input
                 id="password"
@@ -65,19 +75,20 @@ export default function LoginPage() {
             </div>
 
             <div className="flex gap-2">
-              <button 
+              <Button
                 type="submit"
-                className="flex flex-1 items-center justify-center gap-2.5 rounded-md bg-[#0F172A] px-4 py-2 text-sm font-normal leading-6 text-white hover:bg-[#0F172A]/90 transition-colors"
+                className="flex-1 bg-[#0F172A] hover:bg-[#0F172A]/90"
               >
                 로그인
-              </button>
-              <button 
+              </Button>
+              <Button
                 type="button"
                 onClick={handleRegister}
-                className="flex flex-1 items-center justify-center gap-2.5 rounded-md border border-[#E2E8F0] bg-[#F1F5F9] px-4 py-2 text-sm font-normal leading-6 text-[#0F172A] hover:bg-[#E2E8F0] transition-colors"
+                variant="outline"
+                className="flex-1 border-[#E2E8F0] bg-[#F1F5F9] text-[#0F172A] hover:bg-[#E2E8F0]"
               >
                 회원가입
-              </button>
+              </Button>
             </div>
           </div>
         </form>
