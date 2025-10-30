@@ -64,6 +64,13 @@ const historyData = [
     model: "GPT-3.5-turbo",
     status: "analyzing",
   },
+  {
+    user: "user_001",
+    filename: "files.csv",
+    uploadedAt: "2024-10-15 14:30",
+    model: "GPT-3.5-turbo",
+    status: "analyzing",
+  },
 ];
 
 export default function AnalysisHistoryPage() {
