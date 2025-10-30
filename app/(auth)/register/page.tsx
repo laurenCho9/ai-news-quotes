@@ -19,7 +19,7 @@ export default function RegisterPage() {
   };
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-[#F1F5F9] px-4 py-[231px]">
+    <div className="flex min-h-screen items-center justify-center bg-[#F1F5F9] p-4">
       <div className="w-full max-w-[425px] rounded-lg border border-[#CBD5E1] bg-white p-6">
         <div className="flex flex-col items-center gap-8">
           <div className="flex flex-col items-center gap-2">

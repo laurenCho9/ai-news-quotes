@@ -1,15 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import {
-  Upload,
-  Plus,
-  Loader2,
-  CircleCheck,
-  MoreVertical,
-  Search,
-  Download,
-} from "lucide-react";
+import { Loader2, CircleCheck, MoreVertical, Search } from "lucide-react";
 import {
   Pagination,
   PaginationContent,
@@ -18,7 +10,7 @@ import {
   PaginationLink,
 } from "@/components/ui/Pagination";
 import { Button } from "@/components/ui/Button";
-import { LogoutButton } from "@/components/common/LogoutButton";
+import { UserSidebar } from "@/app/(user)/components/UserSidebar";
 import { SearchFilterSelect } from "@/components/common/SearchFilterSelect";
 import { ActionDropdownMenu } from "@/components/common/ActionDropdownMenu";
 
@@ -96,37 +88,8 @@ const UserPage = () => {
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-slate-100 p-5">
-      <div className="flex w-full max-w-[1399px] items-start gap-4">
-        <aside className="flex w-[255px] flex-col rounded-lg border border-[#D4D4D4] bg-[#FAFAFA]">
-          <div className="flex flex-col gap-2 p-2">
-            <div className="flex items-center gap-2 p-2">
-              <div className="flex flex-1 flex-col">
-                <h1 className="font-bold text-lg leading-7 text-[#64748B]">
-                  AI 뉴스 분석
-                </h1>
-              </div>
-            </div>
-          </div>
-
-          <div className="flex flex-1 flex-col px-4 py-2">
-            <div className="flex flex-col items-center gap-2">
-              <Button className="w-full gap-2 bg-slate-900 hover:bg-slate-800">
-                <Upload className="h-4 w-4 text-white" />
-                <span className="text-sm leading-6 text-white">
-                  파일 업로드
-                </span>
-              </Button>
-              <Button className="w-full gap-2 bg-[#64748B] hover:bg-[#64748B]/90">
-                <Plus className="h-4 w-4 text-white" />
-                <span className="text-sm leading-6 text-white">업로드하기</span>
-              </Button>
-            </div>
-          </div>
-
-          <div className="flex flex-col gap-2.5 p-2">
-            <LogoutButton />
-          </div>
-        </aside>
+      <div className="flex w-full max-w-[1399px] items-stretch gap-4">
+        <UserSidebar />
 
         <main className="flex flex-1 flex-col gap-6 py-6">
           <h2 className="text-2xl font-bold leading-8 tracking-[-0.144px] text-slate-900">

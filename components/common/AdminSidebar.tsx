@@ -28,7 +28,7 @@ export function AdminSidebar() {
   const pathname = usePathname();
 
   return (
-    <div className="flex w-[255px] shrink-0 flex-col self-stretch rounded-lg border border-[#D4D4D4] bg-[#FAFAFA]">
+    <div className="flex w-[255px] shrink-0 flex-col rounded-lg border border-[#D4D4D4] bg-[#FAFAFA] sticky top-5 max-h-[calc(100vh-2.5rem)]">
       <div className="flex flex-col items-start gap-2 p-2">
         <div className="flex items-center gap-2 self-stretch p-2">
           <div className="flex flex-1 flex-col items-start">
@@ -39,7 +39,7 @@ export function AdminSidebar() {
         </div>
       </div>
 
-      <div className="flex flex-1 flex-col items-start self-stretch px-4 py-2">
+      <div className="flex flex-1 flex-col items-start self-stretch px-4 py-2 overflow-y-auto">
         <div className="flex flex-col items-start gap-1 self-stretch">
           {menuItems.map((item) => {
             const Icon = item.icon;
