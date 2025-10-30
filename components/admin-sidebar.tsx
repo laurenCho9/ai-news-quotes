@@ -1,10 +1,10 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import { usePathname } from "next/navigation"
-import { UsersRound, Settings, FileText, LogOut } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { cn } from "@/lib/utils"
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { UsersRound, Settings, FileText } from "lucide-react";
+import { LogoutButton } from "@/components/LogoutButton";
+import { cn } from "@/lib/utils";
 
 const menuItems = [
   {
@@ -22,10 +22,10 @@ const menuItems = [
     href: "/admin/history",
     icon: FileText,
   },
-]
+];
 
 export function AdminSidebar() {
-  const pathname = usePathname()
+  const pathname = usePathname();
 
   return (
     <div className="flex w-[255px] shrink-0 flex-col self-stretch rounded-lg border border-[#D4D4D4] bg-[#FAFAFA]">
@@ -42,18 +42,16 @@ export function AdminSidebar() {
       <div className="flex flex-1 flex-col items-start self-stretch px-4 py-2">
         <div className="flex flex-col items-start gap-1 self-stretch">
           {menuItems.map((item) => {
-            const Icon = item.icon
-            const isActive = pathname === item.href
-            
+            const Icon = item.icon;
+            const isActive = pathname === item.href;
+
             return (
               <Link
                 key={item.href}
                 href={item.href}
                 className={cn(
                   "flex h-8 items-center gap-2 self-stretch rounded-md px-2 py-2 transition-colors",
-                  isActive
-                    ? "bg-[#0F172A]"
-                    : "hover:bg-[#E5E7EB]"
+                  isActive ? "bg-[#0F172A]" : "hover:bg-[#E5E7EB]"
                 )}
               >
                 <Icon
@@ -70,21 +68,14 @@ export function AdminSidebar() {
                   {item.label}
                 </span>
               </Link>
-            )
+            );
           })}
         </div>
       </div>
 
       <div className="flex flex-col items-start gap-2.5 self-stretch p-2">
-        <Button variant="ghost" className="w-full justify-start gap-2 p-2 h-auto hover:bg-[#E5E7EB]">
-          <LogOut className="h-4 w-4" stroke="#737373" strokeWidth={1.25} />
-          <div className="flex flex-1 flex-col items-start">
-            <span className="self-stretch text-xs font-normal leading-4 text-[#737373]">
-              로그아웃
-            </span>
-          </div>
-        </Button>
+        <LogoutButton />
       </div>
     </div>
-  )
+  );
 }

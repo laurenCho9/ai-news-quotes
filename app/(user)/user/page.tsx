@@ -4,7 +4,6 @@ import { useState } from "react";
 import {
   Upload,
   Plus,
-  LogOut,
   Loader2,
   CircleCheck,
   MoreVertical,
@@ -19,6 +18,7 @@ import {
   PaginationLink,
 } from "@/components/ui/pagination";
 import { Button } from "@/components/ui/button";
+import { LogoutButton } from "@/components/LogoutButton";
 import { SearchFilterSelect } from "@/components/search-filter-select";
 import { ActionDropdownMenu } from "@/components/action-dropdown-menu";
 
@@ -124,14 +124,7 @@ const UserPage = () => {
           </div>
 
           <div className="flex flex-col gap-2.5 p-2">
-            <div className="flex items-center gap-2 p-2">
-              <LogOut className="h-4 w-4 text-[#737373]" />
-              <div className="flex flex-1 flex-col">
-                <span className="text-xs leading-4 text-[#737373]">
-                  로그아웃
-                </span>
-              </div>
-            </div>
+            <LogoutButton />
           </div>
         </aside>
 
@@ -222,10 +215,16 @@ const UserPage = () => {
                         setOpenDropdownId(open ? record.id : null)
                       }
                       onAction={(action) => {
-                        console.log(`Action: ${action} for record ${record.id}`);
+                        console.log(
+                          `Action: ${action} for record ${record.id}`
+                        );
                       }}
                       trigger={
-                        <Button variant="ghost" size="icon-sm" className="h-8 w-8">
+                        <Button
+                          variant="ghost"
+                          size="icon-sm"
+                          className="h-8 w-8"
+                        >
                           <MoreVertical className="h-4 w-4 text-[#0A0A0A]" />
                         </Button>
                       }
