@@ -38,14 +38,12 @@ export type UserStatus = "pending" | "approved" | "rejected" | "blocked";
 export interface User {
   id: number;
   email: string;
-  full_name?: string; // ✅ name → full_name
-  role: string; // ✅ 추가
+  name?: string;
+  role: string;
   is_active: boolean;
-  status?: UserStatus; // ✅ is_approve → status (Enum)
-  signup_ip?: string; // ✅ 추가
-  last_login_ip?: string; // ✅ 추가
+  status?: UserStatus;
+  ip_address?: string;
   created_at: string;
-  updated_at: string; // ✅ 추가
 }
 
 export interface ModelSettings {
@@ -82,14 +80,24 @@ export const authApi = {
 };
 
 export interface MembersResponse {
-  total: number;
+  total_count: number;
   items: User[];
+}
+
+export interface GetMembersParams {
+  query?: string;
+  filter_by?: "email" | "name";
+  sort?: "asc" | "desc";
+  current_page?: number;
+  page_size?: number;
 }
 
 // Members API
 export const membersApi = {
-  getMembers: async () => {
-    const response = await apiClient.get<MembersResponse>("/api/v1/members");
+  getMembers: async (params?: GetMembersParams) => {
+    const response = await apiClient.get<MembersResponse>("/api/v1/members", {
+      params,
+    });
     return response.data;
   },
 

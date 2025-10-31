@@ -19,8 +19,15 @@ export function MemberManagementTable() {
 
   // 회원 목록 조회
   const { data: membersData, isLoading } = useQuery({
-    queryKey: ["members", searchQuery],
-    queryFn: () => membersApi.getMembers(),
+    queryKey: ["members", searchQuery, currentPage],
+    queryFn: () =>
+      membersApi.getMembers({
+        query: searchQuery || undefined,
+        filter_by: "email",
+        sort: "desc",
+        current_page: currentPage,
+        page_size: 9,
+      }),
   });
 
   // 승인 mutation
@@ -197,14 +204,14 @@ export function MemberManagementTable() {
                 <div className="flex h-[53px] flex-1 flex-col items-start justify-center px-8 py-2">
                   <div className="flex items-center self-stretch">
                     <span className="text-sm font-normal leading-5 text-[#0A0A0A]">
-                      {member.full_name || "-"}
+                      {member.name || "-"}
                     </span>
                   </div>
                 </div>
                 <div className="flex h-[53px] w-[200px] flex-col items-start justify-center px-2 py-2">
                   <div className="flex items-center justify-end">
                     <span className="text-sm font-normal leading-5 text-[#0A0A0A]">
-                      {member.signup_ip || "-"}
+                      {member.ip_address || "-"}
                     </span>
                   </div>
                 </div>
@@ -244,7 +251,7 @@ export function MemberManagementTable() {
 
         <DataTablePagination
           currentPage={currentPage}
-          totalPages={Math.ceil((membersData?.total || 0) / 20)}
+          totalPages={Math.ceil((membersData?.total_count || 0) / 9)}
           onPageChange={setCurrentPage}
         />
       </div>
