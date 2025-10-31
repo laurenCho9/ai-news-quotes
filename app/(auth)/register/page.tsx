@@ -89,7 +89,7 @@ export default function RegisterPage() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-[#F1F5F9] p-4">
       <div className="w-full max-w-[425px] rounded-lg border border-[#CBD5E1] bg-white p-6">
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <form onSubmit={handleSubmit(onSubmit)} autoComplete="off">
           <div className="flex flex-col items-center gap-8">
             <div className="flex flex-col items-center gap-2">
               <h1 className="text-lg font-bold leading-7 text-[#0F172A]">
@@ -109,6 +109,7 @@ export default function RegisterPage() {
                   id="email"
                   type="email"
                   placeholder="이메일을 입력해주세요."
+                  autoComplete="off"
                   {...register("email")}
                   className="rounded-md border border-[#CBD5E1] bg-white px-3 py-2 text-sm leading-5 placeholder:text-[#94A3B8] focus:outline-none focus:ring-2 focus:ring-[#0F172A] focus:ring-offset-0"
                 />
@@ -128,6 +129,7 @@ export default function RegisterPage() {
                   id="password"
                   type="password"
                   placeholder="비밀번호를 입력해주세요."
+                  autoComplete="new-password"
                   {...register("password")}
                   className="rounded-md border border-[#CBD5E1] bg-white px-3 py-2 text-sm leading-5 placeholder:text-[#94A3B8] focus:outline-none focus:ring-2 focus:ring-[#0F172A] focus:ring-offset-0"
                 />
@@ -149,6 +151,7 @@ export default function RegisterPage() {
                   id="password_confirm"
                   type="password"
                   placeholder="비밀번호를 다시 한번 입력해주세요."
+                  autoComplete="new-password"
                   {...register("password_confirm")}
                   className="rounded-md border border-[#CBD5E1] bg-white px-3 py-2 text-sm leading-5 placeholder:text-[#94A3B8] focus:outline-none focus:ring-2 focus:ring-[#0F172A] focus:ring-offset-0"
                 />
@@ -170,6 +173,7 @@ export default function RegisterPage() {
                   id="name"
                   type="text"
                   placeholder="이름을 입력해주세요."
+                  autoComplete="off"
                   {...register("name")}
                   className="rounded-md border border-[#CBD5E1] bg-white px-3 py-2 text-sm leading-5 placeholder:text-[#94A3B8] focus:outline-none focus:ring-2 focus:ring-[#0F172A] focus:ring-offset-0"
                 />
