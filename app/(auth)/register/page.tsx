@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -35,7 +35,22 @@ type SignupFormData = z.infer<typeof signupSchema>;
 
 export default function RegisterPage() {
   const [isApprovalModalOpen, setIsApprovalModalOpen] = useState(false);
+  const [ipAddress, setIpAddress] = useState<string>("로딩 중...");
   const router = useRouter();
+
+  // IP 주소 가져오기
+  useEffect(() => {
+    const fetchIpAddress = async () => {
+      try {
+        const response = await fetch("https://api.ipify.org?format=json");
+        const data = await response.json();
+        setIpAddress(data.ip);
+      } catch (error) {
+        setIpAddress("IP 주소를 가져올 수 없습니다");
+      }
+    };
+    fetchIpAddress();
+  }, []);
 
   const {
     register,
@@ -161,6 +176,23 @@ export default function RegisterPage() {
                 {errors.name && (
                   <p className="text-xs text-red-500">{errors.name.message}</p>
                 )}
+              </div>
+
+              <div className="flex flex-col gap-1.5">
+                <label
+                  htmlFor="ip_address"
+                  className="text-sm font-normal leading-5 text-black"
+                >
+                  IP 주소
+                </label>
+                <input
+                  id="ip_address"
+                  type="text"
+                  value={ipAddress}
+                  readOnly
+                  disabled
+                  className="rounded-md border border-[#CBD5E1] bg-[#F1F5F9] px-3 py-2 text-sm leading-5 text-[#64748B] cursor-not-allowed"
+                />
               </div>
 
               <div className="flex gap-2">
