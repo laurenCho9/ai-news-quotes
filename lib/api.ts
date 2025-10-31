@@ -78,15 +78,15 @@ export const authApi = {
   },
 };
 
-// Users API
-export const usersApi = {
-  getUsers: async () => {
-    const response = await apiClient.get<User[]>("/api/v1/users");
+// Members API
+export const membersApi = {
+  getMembers: async () => {
+    const response = await apiClient.get<User[]>("/api/v1/members");
     return response.data;
   },
 
-  toggleUser: async (userId: number) => {
-    const response = await apiClient.patch(`/api/v1/users/${userId}/toggle`);
+  toggleMember: async (userId: number) => {
+    const response = await apiClient.patch(`/api/v1/members/${userId}/toggle`);
     return response.data;
   },
 };

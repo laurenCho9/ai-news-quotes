@@ -67,8 +67,8 @@ export default function RegisterPage() {
     },
     onError: (error: unknown) => {
       const errorMessage =
-        (error as { response?: { data?: { detail?: string } } })?.response?.data
-          ?.detail || "회원가입에 실패했습니다";
+        (error as { response?: { data?: { message?: string } } })?.response?.data
+          ?.message || "회원가입에 실패했습니다";
       alert(errorMessage);
     },
   });
