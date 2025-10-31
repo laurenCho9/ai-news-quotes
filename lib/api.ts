@@ -33,12 +33,15 @@ export interface LoginResponse {
   };
 }
 
+export type UserStatus = "pending" | "approved" | "rejected" | "blocked";
+
 export interface User {
   id: number;
   email: string;
   full_name?: string; // ✅ name → full_name
   role: string; // ✅ 추가
   is_active: boolean;
+  status?: UserStatus; // ✅ is_approve → status (Enum)
   signup_ip?: string; // ✅ 추가
   last_login_ip?: string; // ✅ 추가
   created_at: string;
@@ -78,15 +81,35 @@ export const authApi = {
   },
 };
 
+export interface MembersResponse {
+  total: number;
+  items: User[];
+}
+
 // Members API
 export const membersApi = {
   getMembers: async () => {
-    const response = await apiClient.get<User[]>("/api/v1/members");
+    const response = await apiClient.get<MembersResponse>("/api/v1/members");
     return response.data;
   },
 
   toggleMember: async (userId: number) => {
     const response = await apiClient.patch(`/api/v1/members/${userId}/toggle`);
+    return response.data;
+  },
+
+  approveMember: async (userId: number) => {
+    const response = await apiClient.patch(`/api/v1/members/${userId}/approve`);
+    return response.data;
+  },
+
+  rejectMember: async (userId: number) => {
+    const response = await apiClient.patch(`/api/v1/members/${userId}/reject`);
+    return response.data;
+  },
+
+  blockMember: async (userId: number) => {
+    const response = await apiClient.patch(`/api/v1/members/${userId}/block`);
     return response.data;
   },
 };

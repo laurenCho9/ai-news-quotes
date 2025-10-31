@@ -56,7 +56,7 @@ export function ActionDropdownMenu({
               icon={<XOctagon className="h-4 w-4 stroke-slate-700 stroke-2" />}
               onClick={() => handleAction("reject")}
             >
-              거부
+              승인거부
             </DropdownMenuItem>
             <DropdownMenuItem
               icon={

@@ -45,9 +45,33 @@ export default function LoginPage() {
       }
     },
     onError: (error: unknown) => {
-      const errorMessage =
-        (error as { response?: { data?: { message?: string } } })?.response?.data
-          ?.message || "로그인에 실패했습니다";
+      console.error("로그인 에러:", error);
+      const axiosError = error as { 
+        response?: { 
+          status?: number;
+          data?: { 
+            message?: string;
+            detail?: { message?: string } | string;
+          } 
+        } 
+      };
+      
+      let errorMessage = "로그인에 실패했습니다";
+      
+      if (axiosError.response) {
+        console.error("응답 상태:", axiosError.response.status);
+        console.error("응답 데이터:", axiosError.response.data);
+        
+        const detail = axiosError.response.data?.detail;
+        if (typeof detail === "object" && detail?.message) {
+          errorMessage = detail.message;
+        } else if (typeof detail === "string") {
+          errorMessage = detail;
+        } else if (axiosError.response.data?.message) {
+          errorMessage = axiosError.response.data.message;
+        }
+      }
+      
       alert(errorMessage);
     },
   });
