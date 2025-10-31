@@ -4,8 +4,9 @@ import { apiClient } from "./api-client";
 export interface SignupRequest {
   email: string;
   password: string;
-  password_confirm: string; // ✅ 추가
+  password_confirm: string;
   name: string;
+  ip_address?: string; // 회원가입 시 IP 주소
 }
 
 export interface SignupResponse {

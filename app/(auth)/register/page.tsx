@@ -74,7 +74,13 @@ export default function RegisterPage() {
   });
 
   const onSubmit = (data: SignupFormData) => {
-    signupMutation.mutate(data);
+    // 가져온 IP 주소를 포함하여 전송
+    signupMutation.mutate({
+      ...data,
+      ip_address: ipAddress !== "로딩 중..." && ipAddress !== "IP 주소를 가져올 수 없습니다" 
+        ? ipAddress 
+        : "",
+    });
   };
 
   const handleConfirm = () => {
